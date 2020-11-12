@@ -1,0 +1,129 @@
+@import url('http://fonts.googleaois.com/css2?falily=poppins:eght@400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0; /*all side margin 0px*/
+	padding: 0; /*all side padding 0*/
+	box-sizing: border-box; /**/
+	font-family: 'poppins', sans-serif; /*this is font family*/
+}
+body
+{
+	display: flex; 
+	justify-content: center;
+	align-items: center;/**/
+	flex-wrap: wrap; /**/
+	min-height: 100vh;/*minimum height*/
+	background: #010615;/*this is the background of a element*/
+}
+.box
+{
+	position: relative;
+	width: 300px;/*all side width 300px*/
+	height: 300px;/*all side height 300px*/
+	display: flex; /**/
+	justify-content: center;
+	align-items: center; /**/
+	margin: 40px;/*all side margin 40px*/
+	background: #060c21;
+	transition: 0.5s; /*animation speed*/
+}
+.box:hover
+{
+	height: 400px;
+}
+.box .imgbx /**/
+{
+	position: absolute;
+	top: 0;/*all side width 0px*/
+	left: 0;/*all side  0px*/
+	width: 100%;
+	height: 100%;
+	padding-left: 18px;
+    padding-right: 2px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+	box-sizing: border-box;
+}
+.box .imgbx img
+{
+	max-width: 100%;
+	opacity: 0.1; /**/
+	transition: 0.5s;
+}
+.box:hover .imgbx img
+{
+	opacity: 1;
+}
+.box:before
+{
+	content: '';
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	left: -2px;
+	bottom: -2px;
+	background: #fff;
+	z-index: -1; /*this is use for seen image properly*/
+}
+.box:after
+{
+	content: ''; /**/
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	left: -2px;
+	bottom: -2px;
+	background: #fff;
+	z-index: -2;
+	filter: blur(10px); /*this is use for brightness*/ 
+}
+.box:before,
+.box:after
+{
+	background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.box:nth-child(2):before,
+.box:nth-child(2):after
+{
+	background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+.box:nth-child(3):before,
+.box:nth-child(3):after
+{
+	background: linear-gradient(235deg,#89ff00,#010615,#fbff00);
+}
+.box .content
+{
+	position: absolute;
+	bottom: 0;
+	left: 17px;
+	right: 20px;
+	bottom: 28px;
+	height: 90px;
+	background: rgba(0,0,0,0.4); /* red, green, blue, */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	opacity: 0;
+	transition: 0.5s;
+}
+.box:hover .content
+{
+	opacity: 1;
+}
+.box .content h2
+{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+.box .content h2 span
+{
+	font-size: 14px;
+	color: #fff;
+	font-weight: 200;
+	letter-spacing: 2px;
+}
